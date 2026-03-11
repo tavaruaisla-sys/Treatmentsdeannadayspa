@@ -133,10 +133,10 @@ function ServiceCard({
 export default function PremiumSection() {
   return (
     <section
-      className="py-12 px-6"
+      className="py-12 px-8"
       style={{ background: "linear-gradient(135deg, #e0f7fa 0%, #f0fbfc 100%)" }}
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

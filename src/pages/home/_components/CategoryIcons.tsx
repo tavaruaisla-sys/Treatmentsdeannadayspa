@@ -62,8 +62,8 @@ export default function CategoryIcons() {
   };
 
   return (
-    <section className="bg-background py-10 px-6">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-background py-10 px-8">
+      <div className="max-w-6xl mx-auto">
         <div className="relative flex items-center justify-center gap-2">
           <button
             onClick={() => scroll("left")}

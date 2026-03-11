@@ -33,7 +33,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-r from-[#00696e]/80 via-[#00838F]/60 to-transparent" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:py-32 py-2">
+      <div className="relative z-10 max-w-6xl mx-auto px-8 md:py-32 py-2">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

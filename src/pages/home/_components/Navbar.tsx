@@ -15,7 +15,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#00838F]/10 shadow-sm">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-8 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2">
           <div className="w-9 h-9 rounded-full bg-[#00838F] flex items-center justify-center">
@@ -62,7 +62,7 @@ export default function Navbar() {
           open ? "max-h-80 py-4" : "max-h-0"
         )}
       >
-        <ul className="flex flex-col gap-1 px-6">
+        <ul className="flex flex-col gap-1 px-8">
           {navLinks.map((link) => (
             <li key={link.label}>
               <a

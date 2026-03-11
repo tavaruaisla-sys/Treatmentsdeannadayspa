@@ -2,8 +2,8 @@ import { SparklesIcon, MapPinIcon, PhoneIcon, MailIcon, ClockIcon } from "lucide
 
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-[#006064] text-white py-12 px-6">
-      <div className="max-w-7xl mx-auto">
+    <footer id="contact" className="bg-[#006064] text-white py-12 px-8">
+      <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Reservations */}
           <div>

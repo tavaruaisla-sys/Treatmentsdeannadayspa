@@ -146,9 +146,9 @@ export default function ServiceSection({
   return (
     <section
       id={id}
-      className={`py-12 px-6 ${bgLight ? "bg-[#f5fbfc]" : "bg-background"}`}
+      className={`py-12 px-8 ${bgLight ? "bg-[#f5fbfc]" : "bg-background"}`}
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
