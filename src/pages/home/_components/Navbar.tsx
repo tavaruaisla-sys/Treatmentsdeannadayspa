@@ -32,43 +32,12 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="flex items-center gap-8">
           {navLinks.map((link) => (
             <li key={link.label}>
               <a
                 href={link.href}
                 className="text-xs font-sans font-medium tracking-widest text-foreground/70 hover:text-[#00838F] transition-colors duration-200"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-
-        {/* Mobile Toggle */}
-        <button
-          className="md:hidden p-2 text-foreground"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-        >
-          {open ? <XIcon className="w-5 h-5" /> : <MenuIcon className="w-5 h-5" />}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      <div
-        className={cn(
-          "md:hidden overflow-hidden transition-all duration-300 bg-white border-t border-border",
-          open ? "max-h-80 py-4" : "max-h-0"
-        )}
-      >
-        <ul className="flex flex-col gap-1 px-4">
-          {navLinks.map((link) => (
-            <li key={link.label}>
-              <a
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className="block py-3 text-sm font-sans font-medium tracking-widest text-foreground/70 hover:text-[#00838F] transition-colors"
               >
                 {link.label}
               </a>

@@ -87,28 +87,19 @@ function TreatmentCardItem({
         {/* Push sub-cards to bottom */}
         <div className="flex-1" />
 
-        {/* Stacked white sub-cards */}
+        {/* Stacked blurred sub-cards */}
         <div className="space-y-2">
           {card.options.map((opt) => (
             <div
               key={opt.duration}
-              className="bg-white rounded-2xl flex items-center gap-3 px-3 py-2.5 shadow-sm"
+              className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl flex items-center gap-3 px-4 py-2.5 shadow-sm"
             >
-              {/* Circular thumbnail */}
-              <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 border-2 border-[#00838F]/20">
-                <img
-                  src={opt.thumbnail}
-                  alt={opt.duration}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
               {/* Duration + price */}
               <div className="flex-1 min-w-0">
-                <p className="font-sans font-bold text-sm text-foreground leading-tight">
+                <p className="font-sans font-bold text-sm text-white leading-tight">
                   {opt.duration}
                 </p>
-                <p className="font-sans text-xs text-muted-foreground mt-0.5">
+                <p className="font-sans text-xs text-white/70 mt-0.5">
                   {opt.price}
                 </p>
               </div>
@@ -158,9 +149,6 @@ export default function ServiceSection({
           <h2 className="font-serif text-3xl font-semibold text-foreground">
             {title}
           </h2>
-          <button className="text-xs text-[#00838F] font-medium font-sans flex items-center gap-1 hover:underline">
-            See All <ChevronRightIcon className="w-3.5 h-3.5" />
-          </button>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -168,39 +156,6 @@ export default function ServiceSection({
             <TreatmentCardItem key={`${page}-${i}`} card={card} index={i} />
           ))}
         </div>
-
-        {/* Pagination */}
-        {totalPages > 1 && (
-          <div className="flex items-center justify-center gap-2 mt-8">
-            <button
-              onClick={() => setPage(Math.max(0, page - 1))}
-              disabled={page === 0}
-              className="w-8 h-8 rounded-full border border-border flex items-center justify-center text-sm hover:bg-[#00838F] hover:text-white hover:border-[#00838F] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
-            >
-              <ChevronLeftIcon className="w-4 h-4" />
-            </button>
-            {Array.from({ length: totalPages }).map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setPage(i)}
-                className={`w-8 h-8 rounded-full text-sm font-medium transition-colors ${
-                  page === i
-                    ? "bg-[#00838F] text-white"
-                    : "border border-border text-foreground hover:bg-[#00838F]/10"
-                }`}
-              >
-                {i + 1}
-              </button>
-            ))}
-            <button
-              onClick={() => setPage(Math.min(totalPages - 1, page + 1))}
-              disabled={page === totalPages - 1}
-              className="w-8 h-8 rounded-full border border-border flex items-center justify-center text-sm hover:bg-[#00838F] hover:text-white hover:border-[#00838F] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
-            >
-              <ChevronRightIcon className="w-4 h-4" />
-            </button>
-          </div>
-        )}
       </div>
     </section>
   );
